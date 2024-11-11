@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 st.title('Police Incident Reports from 2018 to 2020 in San Francisco')
 
