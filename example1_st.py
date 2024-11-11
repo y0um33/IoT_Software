@@ -19,3 +19,10 @@ mapa['Resolution'] = df['Resolution']
 mapa['lat'] = df['Latitude']
 mapa['lon'] = df['Longitude']
 mapa = mapa.dropna()
+
+subset_data2 = mapa
+police_district_input = st.sidebar.multiselect(
+  'Police District',
+mapa.groupby('Police District').count().reset_index()['Police District'].tolist())
+if len(police_district_input) > 0:
+  subset_data2 = mapa[mapa['Police District'].isin(police_district_input)]
